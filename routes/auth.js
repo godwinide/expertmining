@@ -37,7 +37,7 @@ router.get("/register", (req,res) => {
 
 router.post('/register', async (req,res) => {
     try{
-        const {username, firstname, lastname, email, phone, referral, currency, plans, country, password} = req.body;
+        const {username, firstname, lastname, email, phone, currency, plans, country, password} = req.body;
         console.log(req.body);
         const user = await User.findOne({email});
         const user1 = await User.findOne({username});
@@ -55,7 +55,6 @@ router.post('/register', async (req,res) => {
                 username,
                 firstname,
                 lastname,
-                referral,
                 currency,
                 plans,
                 email,
