@@ -1,0 +1,119 @@
+<section class="content">
+    <div class="">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <h2><i class="fa fa-home"></i> <%=req.user.username %>'s Dashboard <div id="google_translate_element"></div></h2> 
+                    <button style="background:#00A9E3;" class="btn btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-12">
+                    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+<div style="margin:auto; text-align:center;" class="col-12 justify-content-between">
+<div style="margin: auto;">
+<a style="background-color:#00A9E3;" href="/payment-method/" class="btn">
+    <strong> <i style="font-size:14px;" class="zmdi zmdi-play-for-work"> </i> Deposit</strong>
+</a>
+<a style="background-color:#00A9E3;" href="/withdraw/" class="btn">
+    <strong> <i style="font-size:14px;" class="zmdi zmdi-money"> </i> Withdraw</strong>
+</a>
+</div>
+<hr>
+</div>
+<div class="col-lg-3 col-md-12 col-sm-12">
+<div class="card widget_2">
+<div class="body">
+    <h6 style="font-size:10px">
+                    <div style="color:red;" class="number dashtext-1"><%= req.user.username%>-Dormant</div>
+                        </h6><br>
+                    <h2 style="font-size:16px; color:black"> &dollar; <%= req.user.balance %>
+</h2>
+    <hr>
+    <h2 style="font-size:12px; color:black"> <b><%= req.user.balance_bitcoin %></b> BTC </h2>
+    <div style="margin:0 auto 0 auto;" class="row">
+        <a style="background-color:#00A9E3;"  href="#" class="btn bg-amber">
+            <strong>Total Balance</strong>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-12 col-sm-12">
+<div class="card widget_2">
+<div class="body">
+                    <h6>Total Deposit</h6><br>
+    <h2 style="font-size:16px; color:black"> &dollar;  <%= req.user.total_deposit %>
+</h2>
+    <hr>
+    <h2 style="font-size:12px; color:black"> <b><%= req.user.total_deposit_bitcoin %></b> BTC </h2>
+    <div style="margin:0 auto 0 auto;" class="row">
+        <a href="../deposit/" class="btn bg-amber">
+            <strong>Total Deposit</strong>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-12 col-sm-12">
+<div class="card widget_2">
+<div class="body">
+    <div style="margin-top:-20px; width:60px; height:60px; float:right;" class="bg-purple rounded-circle">
+        <img src="/private/assets/images/btc.png" alt="" srcset="">
+    </div>
+                    <h6>Profit</h6> <br>
+    <h2 style="font-size:16px; color:black">&dollar;  <%= req.user.total_profit %>
+</h2>
+    <hr>
+    <h2 style="font-size:12px; color:black"> <b><%= req.user.total_profit_bitcoin %></b> BTC </h2>
+    <div style="margin:0 auto 0 auto;" class="row">
+        <a href="/withdraw/" class="btn bg-purple">
+            <strong>Return on Investment</strong>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-12 col-sm-12">
+<div class="card widget_2">
+<div class="body">
+    <div style="margin-top:-20px; width:60px; height:60px; float:right;" class="bg-purple rounded-circle">
+        <img src="/private/assets/images/btc.png" alt="" srcset="">
+    </div>
+                    <h6>Referral</h6> <br>
+    <h2 style="font-size:16px; color:black">&dollar;  <%= req.user.referral %>
+</h2>
+    <hr>
+    <h2 style="font-size:12px; color:black"> <b><%= req.user.referral_bitcoin %></b> BTC </h2>
+    <div style="margin:0 auto 0 auto;" class="row">
+        <a href="../profile/" class="btn bg-purple">
+            <strong>Ref. Bonus</strong>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="row clearfix">
+                <div style="margin-top:-30px" class="col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Trading</h2>
+                        </div>
+                        <div id="dle-content"><iframe id="tradingview_d9a60" src="https://dwq4do82y8xi7.cloudfront.net/widgetembed/?symbol=EURUSD&amp;interval=1&amp;hidesidetoolbar=0&amp;symboledit=1&amp;toolbarbg=f1f3f6&amp;studies=&amp;theme=White&amp;style=1&amp;hideideasbutton=1&amp;withdateranges=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;utmsource=www.escoptions.com&amp;utmmedium=www.escoptions.com/advanced-graphics" style="width: 100%; height: 400px; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>

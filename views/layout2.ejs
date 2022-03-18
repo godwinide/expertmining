@@ -1,0 +1,290 @@
+
+<!doctype html>
+<html class="no-js " lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Fully Decentralized Cryptocurrency Platform">
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon"> <!-- Favicon-->
+    <link rel="stylesheet" href="/private/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/private/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css" />
+    <link rel="stylesheet" href="/private/assets/plugins/charts-c3/plugin.css" />
+
+    <link rel="stylesheet" href="/private/assets/plugins/morrisjs/morris.min.css" />
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="/private/assets/css/style.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <title><%= req.user.username%> - Dashboard | expertminingtrade</title>
+</head>
+
+        <body class="theme-blush">
+
+            <!-- Page Loader -->
+            <div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="../favicon.png" width="48" height="48" alt="MTX"></div>
+        <p><strong>Hi <%= req.user.username%>! Welcome</strong> </p>
+    </div>
+</div>
+            <!-- Overlay For Sidebars -->
+            <div class="overlay"></div>
+
+            <!-- Main Search -->
+            <div id="search">
+                <button id="close" type="button" class="close btn btn-primary btn-icon btn-icon-mini btn-round">x</button>
+                <form>
+                    <input type="search" value="" placeholder="Search..." />
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+
+            <!-- Right Icon menu Sidebar -->
+<div class="navbar-right">
+    <ul class="navbar-nav">
+        <li><a href="#search" class="main_search" title="Search..."><i class="zmdi zmdi-search"></i></a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" title="App" data-toggle="dropdown" role="button"><i class="zmdi zmdi-apps"></i></a>
+            <ul class="dropdown-menu slideUp2">
+                <li class="header">App Sortcute</li>
+                <li class="body">
+                    <ul class="menu app_sortcut list-unstyled">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-blue"><i class="zmdi zmdi-camera"></i></div>
+                                <p class="mb-0">Photos</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-amber"><i class="zmdi zmdi-translate"></i></div>
+                                <p class="mb-0">Translate</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-green"><i class="zmdi zmdi-calendar"></i></div>
+                                <p class="mb-0">Calendar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-account-calendar"></i></div>
+                                <p class="mb-0">Contacts</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-red"><i class="zmdi zmdi-tag"></i></div>
+                                <p class="mb-0">News</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle mb-2 bg-grey"><i class="zmdi zmdi-map"></i></div>
+                                <p class="mb-0">Maps</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" title="Notifications" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i>
+                <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+            </a>
+            <ul class="dropdown-menu slideUp2">
+                <li class="header">Notifications</li>
+                <li class="body">
+                    <ul class="menu list-unstyled">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-blue"><i class="zmdi zmdi-account"></i></div>
+                                <div class="menu-info">
+                                    <h4>8 New Members joined</h4>
+                                    <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-amber"><i class="zmdi zmdi-shopping-cart"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>ID5212601</b>Invested $1,800</h4>
+                                    <p><i class="zmdi zmdi-time"></i> 22 mins ago </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-red"><i class="zmdi zmdi-delete"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>ID3091209</b> Earned $28,000</h4>
+                                    <p><i class="zmdi zmdi-time"></i> 3 hours ago </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-green"><i class="zmdi zmdi-edit"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>ID30912821</b> Changed name</h4>
+                                    <p><i class="zmdi zmdi-time"></i> 2 hours ago </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-purple"><i class="zmdi zmdi-refresh"></i></div>
+                                <div class="menu-info">
+                                    <h4><b>ID30912800</b> Updated status</h4>
+                                    <p><i class="zmdi zmdi-time"></i> 3 hours ago </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <div class="icon-circle bg-light-blue"><i class="zmdi zmdi-settings"></i></div>
+                                <div class="menu-info">
+                                    <h4>Settings Updated</h4>
+                                    <p><i class="zmdi zmdi-time"></i> Yesterday </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
+            </ul>
+        </li>
+
+        <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+        <li><a href="/logout" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
+    </ul>
+</div>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <div class="navbar-brand">
+                    <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
+                    <a href="/dashboard"><img src="/favicon.png" width="25" alt="expertminingtrade"><span class="m-l-10"><strong>Expertminingtrade</strong></span></a>
+                </div>
+                <div class="menu">
+                    <ul class="list">
+                        <li>
+                            <div class="user-info">
+                                <a class="image" href="/profile/"><img title=" john"  src='/private/assets/images/user.jpg'>
+                                                                </a>
+                                <div class="detail">
+                                    <h4><%=req.user.firstname%></h4>
+                                    <small> @<%=req.user.username%> </small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="active open text-center"><a href="/dashboard/"><i title="Dashboard" style="font-size:28px;" class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span></a></li>
+
+                        <li class="open text-center"><a href="/payment-method"><i title="Invest Now" style="font-size:28px;" class="zmdi zmdi-play-for-work"></i> <span>Invest</span></a></li>
+
+                        <li class="open text-center"><a href="/withdraw/"><i title="Withdraw Funds" style="font-size:28px;" class="zmdi zmdi-balance-wallet"></i> <span>Withdraw</span></a></li>
+
+                        <li class="open text-center"><a href="/exchanger/"><i title="Exchange/Flip" style="font-size:28px;" class="zmdi zmdi-money"></i> <span>Exchanger</span></a></li>
+
+                        <li class="open text-center"><a href="/transactions/"><i title="Transactions" style="font-size:28px;" class="zmdi zmdi-refresh-alt"></i> <span>Transactions</span></a></li>
+
+                        <li class="open text-center"><a href="/faq2"><i title="Frequently Asked Questions" style="font-size:28px;" class="zmdi zmdi-assignment"></i> <span>FAQ</span></a></li>
+
+                        <li><a href="javascript:void(0);" class="open text-center menu-toggle"><i style="font-size:28px;" class="zmdi zmdi-account-circle"></i> <span>Account</span></a>
+                            <ul class="ml-menu">
+                                <li><a href="/profile">My Profile</a></li>
+                                <li><a href="/edit-profile/">Edit Profile</a></li>
+                                <li><a href="/change-password/">Change Password</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+    <ul class="nav nav-tabs sm">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="slim_scroll">
+            <div class="card">
+                <h6>Theme Option</h6>
+                <div class="light_dark">
+                    <div class="radio">
+                        <input type="radio" name="radio1" id="lighttheme" value="light" checked="">
+                        <label for="lighttheme">Light Mode</label>
+                    </div>
+                    <div class="radio mb-0">
+                        <input type="radio" name="radio1" id="darktheme" value="dark">
+                        <label for="darktheme">Dark Mode</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+            <!-- Main Content -->
+            <%-body%>
+
+            <script src="//code.tidio.co/ilef0qxkohcgflulhre9arvbn0zsrzdx.js" async></script>
+    <!-- Jquery Core Js -->
+<script src="/private/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+<script src="/private/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="/private/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="/private/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+<script src="/private/assets/bundles/c3.bundle.js"></script>
+
+<script src="/private/assets/bundles/mainscripts.bundle.js"></script>
+<script src="/private/assets/js/pages/index.js"></script>
+<script src="/private/assets/js/pages/forms/basic-form-elements.js"></script>
+<script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+
+
+<!-- <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+-->
+<style type="text/css">
+    .goog-logo-link {
+        display: none !important;
+    }
+
+    .goog-te-gadget {
+        color: transparent !important;
+        border-color: transparent !important;
+        background-color: transparent !important;
+    }
+
+    .goog-te-gadget .goog-te-combo {
+        width: 184px;
+        padding: 1px;
+        font-family: inherit;
+        font-weight: bold;
+        color: whitesmoke !important;
+        border-radius: 5px;
+        font-size: 13px;
+        border-color: transparent !important;
+        background-color: #4eafd6 !important;
+    }
+</style>
+
+</body>
+
+
+</html>

@@ -1,0 +1,166 @@
+
+<!-- Main Content -->
+<section class="content">
+    <div class="">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2><i class="fa fa-home"></i>Transactions <div id="google_translate_element"></div></h2>
+                    <button style="background:#00A9E3;" class="btn btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+    <div style="margin:auto; text-align:center;" class="col-12 justify-content-between">
+        <div style="margin: auto;">
+            <a style="background-color:#00A9E3;" href="/payment-method/" class="btn">
+                <strong> <i style="font-size:14px;" class="zmdi zmdi-play-for-work"> </i> Deposit</strong>
+            </a>
+            <a style="background-color:#00A9E3;" href="/withdraw/" class="btn">
+                <strong> <i style="font-size:14px;" class="zmdi zmdi-money"> </i> Withdraw</strong>
+            </a>
+        </div>
+        <hr>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12">
+        <div class="card widget_2">
+            <div class="body">
+                <h6 style="font-size:10px">
+                                            <div style="color:red;" class="number dashtext-1"><%=req.user.username%> -Dormant</div>
+                                    </h6><br>
+                                <h2 style="font-size:16px; color:black"> &dollar;  <%= req.user.balance %>
+</h2>
+                <hr>
+                <h2 style="font-size:12px; color:black"> <b> <%= req.user.balance_bitcoin %></b> BTC </h2>
+                <div style="margin:0 auto 0 auto;" class="row">
+                    <a style="background-color:#00A9E3;"  href="#" class="btn bg-amber">
+                        <strong>Total Balance</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12">
+        <div class="card widget_2">
+            <div class="body">
+                                <h6>Total Deposit</h6><br>
+                <h2 style="font-size:16px; color:black"> &dollar;   <%= req.user.total_deposit %>
+ </h2>
+                <hr>
+                <h2 style="font-size:12px; color:black"> <b> <%= req.user.total_deposit_bitcoin %></b> BTC </h2>
+                <div style="margin:0 auto 0 auto;" class="row">
+                    <a href="../deposit/" class="btn bg-amber">
+                        <strong>Total Deposit</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12">
+        <div class="card widget_2">
+            <div class="body">
+                <div style="margin-top:-20px; width:60px; height:60px; float:right;" class="bg-purple rounded-circle">
+                    <img src="../assets/images/btc.png" alt="" srcset="">
+                </div>
+                                <h6>Profit</h6> <br>
+                <h2 style="font-size:16px; color:black">&dollar;   <%= req.user.total_profit %>
+ </h2>
+                <hr>
+                <h2 style="font-size:12px; color:black"> <b> <%= req.user.total_profit_bitcoin %></b> BTC </h2>
+                <div style="margin:0 auto 0 auto;" class="row">
+                    <a href="../withdraw/" class="btn bg-purple">
+                        <strong>Return on Investment</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12">
+        <div class="card widget_2">
+            <div class="body">
+                <div style="margin-top:-20px; width:60px; height:60px; float:right;" class="bg-purple rounded-circle">
+                    <img src="../assets/images/btc.png" alt="" srcset="">
+                </div>
+                                <h6>Referral</h6> <br>
+                <h2 style="font-size:16px; color:black">&dollar;   <%= req.user.referral %>
+ </h2>
+                <hr>
+                <h2 style="font-size:12px; color:black"> <b> <%= req.user.referral_bitcoin %></b> BTC </h2>
+                <div style="margin:0 auto 0 auto;" class="row">
+                    <a href="../profile/" class="btn bg-purple">
+                        <strong>Ref. Bonus</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row clearfix">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div style="margin-top: -20px;" class="card project_list">
+            <div class="header">
+                <h2>Withdrawal Requests</h2>
+            </div>
+        
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Wallet Address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <hr style="border:2px dashed gray">
+            <hr style="border:1px solid gray">
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div style="margin-top: -20px;" class="card project_list">
+            <div class="header">
+                <h2><b>Completed</b></h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Narration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination pagination-primary mt-4">
+                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>

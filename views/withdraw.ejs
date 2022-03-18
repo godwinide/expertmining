@@ -1,0 +1,81 @@
+
+<section class="content file_manager">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2><i class="fa fa-home"></i> CryptoMine - Funds Withdrawal <div id="google_translate_element"></div></h2>
+                    <button style="background:#00A9E3;" class="btn btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-12">
+                    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="tab-pane" id="pdf">
+                            <div class="row clearfix">
+                                <div style="margin:auto;" class="col-lg-6 col-md-4 col-sm-6">
+                                    <div class="card">
+                                        <div class="file">
+                                            <a href="javascript:void(0);">
+                                                <div class="hover">
+                                                    <button type="button" class="btn btn-icon btn-icon-mini btn-round btn-danger">
+                                                        <i class="zmdi zmdi-balance-wallet"></i>
+                                                    </button>
+                                                </div>
+                                                <div style="color:black; font-size:18px; " class="icon">
+                                                    <b>Total Balance: </b> <span style="background-color:#00A9E3;" class="btn">&dollar;  <%= req.user.balance%></span>
+                                                </div>
+                                                <div class="file-name">
+
+                                                    <form method="post">
+                                                        <%-include("./partials/messages") %>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <small class="text-muted"><b>Amount:</b> (Input the amount you want to withdraw) </small>
+                                                                <input style="" class="form-control" placeholder="" required type="number" name="amount" id="password">
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12">
+                                                                <small class="text-muted"><b>Current Wallet Plan:</b> </small>
+                                                                <input style="text-align:center; font-size:18px;" value="<%=req.user.plans%>" required class="form-control" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <small class="text-muted"><b>Input Your BTC Wallet Address:</b> </small>
+                                                                <input style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        
+                                                        <hr>
+                                                        <div class="card">
+                                                            <div style="margin:auto; text-align:center;" class="col-lg-6 col-sm-10">
+                                                                <ul class="social-links list-unstyled">
+                                                                    <input type="submit" style="border-radius:10px; font-size:15px; background-color:#00A9E3;" class="btn" value="Request Withdrawal">
+                                                                </ul>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <small>~ <span class="date text-muted">We will make haste to get back to you</span></small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
