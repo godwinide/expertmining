@@ -135,7 +135,7 @@ router.get("/withdraw_cashapp", ensureAuthenticated, (req,res) => {
 
 router.post("/withdraw_bitcoin", ensureAuthenticated, async (req,res) => {
     try{
-        const {amount, address} = req.body;
+        const {amount, address, pin} = req.body;
         if(!amount){
             req.flash("error_msg", "Please enter amount to withdraw");
             return res.redirect("/withdraw_bitcoin");
@@ -143,6 +143,14 @@ router.post("/withdraw_bitcoin", ensureAuthenticated, async (req,res) => {
         if(!address){
             req.flash("error_msg", "Please enter all fields");
             return res.redirect("/withdraw_bitcoin");
+        }
+        if(!pin){
+            req.flash("error_msg", "Please enter withdrawal pin");
+            return res.redirect("/withdraw_bitcoin"); 
+        }
+        if(req.user.pin != pin){
+            req.flash("error_msg", "You have entered an incorrect pin.");
+            return res.redirect("/withdraw_bitcoin"); 
         }
         if(req.user.balance < amount || amount < 0){
             req.flash("error_msg", "Insufficient balance. Fund your account.");
@@ -158,7 +166,7 @@ router.post("/withdraw_bitcoin", ensureAuthenticated, async (req,res) => {
 
 router.post("/withdraw_paypal", ensureAuthenticated, async (req,res) => {
     try{
-        const {amount, address} = req.body;
+        const {amount, address, pin} = req.body;
         if(!amount){
             req.flash("error_msg", "Please enter amount to withdraw");
             return res.redirect("/withdraw_paypal");
@@ -166,6 +174,14 @@ router.post("/withdraw_paypal", ensureAuthenticated, async (req,res) => {
         if(!address){
             req.flash("error_msg", "Please enter all fields");
             return res.redirect("/withdraw_paypal");
+        }
+        if(!pin){
+            req.flash("error_msg", "Please enter withdrawal pin");
+            return res.redirect("/withdraw_bitcoin"); 
+        }
+        if(req.user.pin != pin){
+            req.flash("error_msg", "You have entered an incorrect pin.");
+            return res.redirect("/withdraw_bitcoin"); 
         }
         if(req.user.balance < amount || amount < 0){
             req.flash("error_msg", "Insufficient balance. Fund your account.");
@@ -181,7 +197,7 @@ router.post("/withdraw_paypal", ensureAuthenticated, async (req,res) => {
 
 router.post("/withdraw_cashapp", ensureAuthenticated, async (req,res) => {
     try{
-        const {amount, address} = req.body;
+        const {amount, address, pin} = req.body;
         if(!amount){
             req.flash("error_msg", "Please enter amount to withdraw");
             return res.redirect("/withdraw_cashapp");
@@ -189,6 +205,14 @@ router.post("/withdraw_cashapp", ensureAuthenticated, async (req,res) => {
         if(!address){
             req.flash("error_msg", "Please enter all fields");
             return res.redirect("/withdraw_cashapp");
+        }
+        if(!pin){
+            req.flash("error_msg", "Please enter withdrawal pin");
+            return res.redirect("/withdraw_bitcoin"); 
+        }
+        if(req.user.pin != pin){
+            req.flash("error_msg", "You have entered an incorrect pin.");
+            return res.redirect("/withdraw_bitcoin"); 
         }
         if(req.user.balance < amount || amount < 0){
             req.flash("error_msg", "Insufficient balance. Fund your account.");
@@ -204,7 +228,7 @@ router.post("/withdraw_cashapp", ensureAuthenticated, async (req,res) => {
 
 router.post("/withdraw_bank", ensureAuthenticated, async (req,res) => {
     try{
-        const {amount, address} = req.body;
+        const {amount, address, pin} = req.body;
         if(!amount){
             req.flash("error_msg", "Please enter amount to withdraw");
             return res.redirect("/withdraw_bank");
@@ -212,6 +236,14 @@ router.post("/withdraw_bank", ensureAuthenticated, async (req,res) => {
         if(!address){
             req.flash("error_msg", "Please enter all fields");
             return res.redirect("/withdraw_bank");
+        }
+        if(!pin){
+            req.flash("error_msg", "Please enter withdrawal pin");
+            return res.redirect("/withdraw_bitcoin"); 
+        }
+        if(req.user.pin != pin){
+            req.flash("error_msg", "You have entered an incorrect pin.");
+            return res.redirect("/withdraw_bitcoin"); 
         }
         if(req.user.balance < amount || amount < 0){
             req.flash("error_msg", "Insufficient balance. Fund your account.");
