@@ -30,7 +30,7 @@
                 <h6 style="font-size:10px">
                                             <div style="color:red;" class="number dashtext-1"><%=req.user.username%> -Dormant</div>
                                     </h6><br>
-                                <h2 style="font-size:16px; color:black"> &dollar;  <%= req.user.balance %>
+                                <h2 style="font-size:16px; color:black"> <%= req.user.currency%>   <%= req.user.balance %>
 </h2>
                 <hr>
                 <h2 style="font-size:12px; color:black"> <b> <%= req.user.balance_bitcoin %></b> BTC </h2>
@@ -46,7 +46,7 @@
         <div class="card widget_2">
             <div class="body">
                                 <h6>Total Deposit</h6><br>
-                <h2 style="font-size:16px; color:black"> &dollar;   <%= req.user.total_deposit %>
+                <h2 style="font-size:16px; color:black"> <%= req.user.currency%>    <%= req.user.total_deposit %>
  </h2>
                 <hr>
                 <h2 style="font-size:12px; color:black"> <b> <%= req.user.total_deposit_bitcoin %></b> BTC </h2>
@@ -65,7 +65,7 @@
                     <img src="../assets/images/btc.png" alt="" srcset="">
                 </div>
                                 <h6>Profit</h6> <br>
-                <h2 style="font-size:16px; color:black">&dollar;   <%= req.user.total_profit %>
+                <h2 style="font-size:16px; color:black"><%= req.user.currency%>    <%= req.user.total_profit %>
  </h2>
                 <hr>
                 <h2 style="font-size:12px; color:black"> <b> <%= req.user.total_profit_bitcoin %></b> BTC </h2>
@@ -84,7 +84,7 @@
                     <img src="../assets/images/btc.png" alt="" srcset="">
                 </div>
                                 <h6>Referral</h6> <br>
-                <h2 style="font-size:16px; color:black">&dollar;   <%= req.user.referral %>
+                <h2 style="font-size:16px; color:black"><%= req.user.currency%>    <%= req.user.referral %>
  </h2>
                 <hr>
                 <h2 style="font-size:12px; color:black"> <b> <%= req.user.referral_bitcoin %></b> BTC </h2>

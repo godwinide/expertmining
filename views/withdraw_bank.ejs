@@ -29,7 +29,7 @@
                                                     </button>
                                                 </div>
                                                 <div style="color:black; font-size:18px; " class="icon">
-                                                    <b>Total Balance: </b> <span style="background-color:#00A9E3;" class="btn"><%= req.user.currency%> <%= req.user.balance%></span>
+                                                    <b>Total Balance: </b> <span style="background-color:#00A9E3;" class="btn"><%= req.user.currency%>  <%= req.user.balance%></span>
                                                 </div>
                                                 <div class="file-name">
 
@@ -38,19 +38,43 @@
                                                         <div class="row">
                                                             <div class="col-lg-6 col-sm-12">
                                                                 <small class="text-muted"><b>Amount:</b> (Input the amount you want to withdraw) </small>
-                                                                <input style="" class="form-control" placeholder="" required type="number" name="amount" id="password">
+                                                                <input required style="" class="form-control" placeholder="" required type="number" name="amount" id="password">
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12">
                                                                 <small class="text-muted"><b>Current Wallet Plan:</b> </small>
-                                                                <input style="text-align:center; font-size:18px;" value="<%=req.user.plans%>" required class="form-control" readonly>
+                                                                <input required style="text-align:center; font-size:18px;" value="<%=req.user.plans%>" required class="form-control" readonly>
                                                             </div>
                                                         </div>
                                                         <hr>
                                                         
                                                         <div class="row">
                                                             <div class="col-lg-12 col-sm-12">
-                                                                <small class="text-muted"><b>Input Your BTC Wallet Address:</b> </small>
-                                                                <input style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                                <small class="text-muted"><b>Account Number:</b> </small>
+                                                                <input required style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <small class="text-muted"><b>Account Name:</b> </small>
+                                                                <input required style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <small class="text-muted"><b>Bank Name:</b> </small>
+                                                                <input required style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <small class="text-muted"><b>Country:</b> </small>
+                                                                <input required style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12">
+                                                                <small class="text-muted"><b>IBAN:</b> </small>
+                                                                <input required style="text-align:center;" value="" class="form-control" required name="address" placeholder="">
                                                             </div>
                                                         </div>
                                                         <hr>
@@ -59,7 +83,7 @@
                                                         <div class="card">
                                                             <div style="margin:auto; text-align:center;" class="col-lg-6 col-sm-10">
                                                                 <ul class="social-links list-unstyled">
-                                                                    <input type="submit" style="border-radius:10px; font-size:15px; background-color:#00A9E3;" class="btn" value="Request Withdrawal">
+                                                                    <input required type="submit" style="border-radius:10px; font-size:15px; background-color:#00A9E3;" class="btn" value="Request Withdrawal">
                                                                 </ul>
                                                                 <br>
                                                             </div>

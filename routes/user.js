@@ -95,26 +95,127 @@ router.get("/deposits", ensureAuthenticated, async (req,res) => {
 
 router.get("/withdraw", ensureAuthenticated, (req,res) => {
     try{
+        return res.render("withdraw_methods", {pageTitle: "Withdraw Funds", layout: 'layout2', req});
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.get("/withdraw_bitcoin", ensureAuthenticated, (req,res) => {
+    try{
         return res.render("withdraw", {pageTitle: "Withdraw Funds", layout: 'layout2', req});
     }catch(err){
         return res.redirect("/");
     }
 });
 
-router.post("/withdraw", ensureAuthenticated, async (req,res) => {
+router.get("/withdraw_paypal", ensureAuthenticated, (req,res) => {
+    try{
+        return res.render("withdraw_paypal", {pageTitle: "Withdraw Funds", layout: 'layout2', req});
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.get("/withdraw_bank", ensureAuthenticated, (req,res) => {
+    try{
+        return res.render("withdraw_bank", {pageTitle: "Withdraw Funds", layout: 'layout2', req});
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.get("/withdraw_cashapp", ensureAuthenticated, (req,res) => {
+    try{
+        return res.render("withdraw_cashapp", {pageTitle: "Withdraw Funds", layout: 'layout2', req});
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.post("/withdraw_bitcoin", ensureAuthenticated, async (req,res) => {
     try{
         const {amount, address} = req.body;
         if(!amount){
             req.flash("error_msg", "Please enter amount to withdraw");
-            return res.redirect("/withdraw");
+            return res.redirect("/withdraw_bitcoin");
         }
         if(!address){
-            req.flash("error_msg", "Please enter wallet address");
-            return res.redirect("/withdraw");
+            req.flash("error_msg", "Please enter all fields");
+            return res.redirect("/withdraw_bitcoin");
         }
         if(req.user.balance < amount || amount < 0){
             req.flash("error_msg", "Insufficient balance. Fund your account.");
-            return res.redirect("/withdraw");
+            return res.redirect("/withdraw_bitcoin");
+        }
+        else{
+            return res.render("withdrawResponse", {pageTitle: "Payment Sent", layout: 'layout2', req});
+        }
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.post("/withdraw_paypal", ensureAuthenticated, async (req,res) => {
+    try{
+        const {amount, address} = req.body;
+        if(!amount){
+            req.flash("error_msg", "Please enter amount to withdraw");
+            return res.redirect("/withdraw_paypal");
+        }
+        if(!address){
+            req.flash("error_msg", "Please enter all fields");
+            return res.redirect("/withdraw_paypal");
+        }
+        if(req.user.balance < amount || amount < 0){
+            req.flash("error_msg", "Insufficient balance. Fund your account.");
+            return res.redirect("/withdraw_paypal");
+        }
+        else{
+            return res.render("withdrawResponse", {pageTitle: "Payment Sent", layout: 'layout2', req});
+        }
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.post("/withdraw_cashapp", ensureAuthenticated, async (req,res) => {
+    try{
+        const {amount, address} = req.body;
+        if(!amount){
+            req.flash("error_msg", "Please enter amount to withdraw");
+            return res.redirect("/withdraw_cashapp");
+        }
+        if(!address){
+            req.flash("error_msg", "Please enter all fields");
+            return res.redirect("/withdraw_cashapp");
+        }
+        if(req.user.balance < amount || amount < 0){
+            req.flash("error_msg", "Insufficient balance. Fund your account.");
+            return res.redirect("/withdraw_cashapp");
+        }
+        else{
+            return res.render("withdrawResponse", {pageTitle: "Payment Sent", layout: 'layout2', req});
+        }
+    }catch(err){
+        return res.redirect("/");
+    }
+});
+
+router.post("/withdraw_bank", ensureAuthenticated, async (req,res) => {
+    try{
+        const {amount, address} = req.body;
+        if(!amount){
+            req.flash("error_msg", "Please enter amount to withdraw");
+            return res.redirect("/withdraw_bank");
+        }
+        if(!address){
+            req.flash("error_msg", "Please enter all fields");
+            return res.redirect("/withdraw_bank");
+        }
+        if(req.user.balance < amount || amount < 0){
+            req.flash("error_msg", "Insufficient balance. Fund your account.");
+            return res.redirect("/withdraw_bank");
         }
         else{
             return res.render("withdrawResponse", {pageTitle: "Payment Sent", layout: 'layout2', req});
